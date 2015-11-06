@@ -2,9 +2,10 @@ package device
 
 type DeviceType int
 
+const UNKNOWN = iota
+
 const (
-	UNKNOWN DeviceType = iota
-	DESKTOP
+	DESKTOP DeviceType = 1
 	TABLET
 	PHONE
 	CONSOLE
