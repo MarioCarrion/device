@@ -3,7 +3,7 @@ package device
 import "testing"
 
 func TestParse(t *testing.T) {
-	user_agent := "Mozilla/5.0 (iPad; CPU OS 7_1_1 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/34.0.1847.18 Mobile/11D201 Safari/9537.53 (000655)"
+	user_agent := "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko"
 
 	device := Parse(user_agent)
 
@@ -27,8 +27,8 @@ func TestParse(t *testing.T) {
 		t.Errorf("TestParse(Device) returned: %q", device.Device)
 	}
 
-	if device.DeviceType != TABLET {
-		t.Errorf("TestParse(DeviceType) returned: %q", device.DeviceType)
+	if device.DeviceType != DESKTOP {
+		t.Errorf("TestParse(DeviceType) returned: %i", device.DeviceType)
 	}
 
 	if device.DeviceVersion != "" {
